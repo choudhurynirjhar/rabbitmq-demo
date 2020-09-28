@@ -1,7 +1,5 @@
 ﻿using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 using System;
-using System.Text;
 
 namespace RabbitMQ.Consumer
 {
@@ -15,7 +13,7 @@ namespace RabbitMQ.Consumer
             };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
-            DirectExchangeConsumer.Consume(channel);
+            FanoutExchangeConsumer.Consume(channel);
         }
     }
 }
